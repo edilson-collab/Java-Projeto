@@ -56,7 +56,7 @@ public class Aluno {
 		return dataDeNascimento;
 	}
 	
-	//set
+	
 	
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
@@ -76,8 +76,6 @@ public class Aluno {
 	public Mensalidade getMensalidade(){
 		return mensalidade;
 	}
-	
-	//mostrar as infronações
 	
 	public void exibirInformacoes() {
 		System.out.println("-- Informações do Aluno --");
