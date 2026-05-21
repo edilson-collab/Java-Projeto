@@ -1,7 +1,6 @@
 package tabica;
 
 public class Aluno {
-	//objetos da class
 	private String cpf;
 	private String matricula;
 	private String nome;
