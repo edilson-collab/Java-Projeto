@@ -22,7 +22,6 @@ public class EscolaArtesMarciais {
 	        this.funcionarios = new ArrayList<>();
 	    }
 
-	    // Getters e Setters
 	    public String getNome() { return nome; }
 	    public String getEndereco() { return endereco; }
 	    public String getCnpj() {return cnpj; }
