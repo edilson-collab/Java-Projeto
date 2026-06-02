@@ -9,7 +9,6 @@ public class Funcionario {
     private String dataNascimento;
     private String telefone;
 
-    // Construtor
     public Funcionario(String numeroConta, int experiencia, String agencia,
                        String nome, String cpf, String email,
                        String dataNascimento, String telefone) {
@@ -23,7 +22,6 @@ public class Funcionario {
         this.telefone = telefone;
     }
 
-    // Getters e Setters
     public String getNumeroConta() {
         return numeroConta;
     }
