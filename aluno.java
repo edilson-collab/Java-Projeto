@@ -7,8 +7,7 @@ public class Aluno extends Turma {
     private String telefone;
     private String email;
     private String dataNascimento;
-
-    // Construtor
+    
     public Aluno(String matricula, String nome, double peso,
                  String graduacao, String telefone,
                  String email, String dataNascimento) {
@@ -22,7 +21,6 @@ public class Aluno extends Turma {
         this.dataNascimento = dataNascimento;
     }
 
-    // Getters e Setters
     public String getMatricula() {
         return matricula;
     }
