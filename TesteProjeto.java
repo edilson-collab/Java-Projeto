@@ -461,13 +461,13 @@ public class TesteProjeto {
                 recepcionistas
         );
 
-        System.out.print("Nome do gestor: ");
+        System.out.print("Nome do gestor(a): ");
         String nome = scanner.nextLine();
 
         String cpf;
 
         do {
-            System.out.print("CPF do gestor: ");
+            System.out.print("CPF do gestor(a): ");
             cpf = scanner.nextLine();
 
             if (!Validador.validarCpf(cpf)) {
@@ -476,7 +476,7 @@ public class TesteProjeto {
 
         } while (!Validador.validarCpf(cpf));
 
-        System.out.print("Senha do gestor: ");
+        System.out.print("Senha do gestor(a): ");
         String senha = scanner.nextLine();
 
         Recepcionista administrador = new Recepcionista(
@@ -496,7 +496,7 @@ public class TesteProjeto {
 
         recepcionistas.add(administrador);
 
-        System.out.println("Administrador cadastrado com sucesso.");
+        System.out.println("Administrador(a) cadastrado com sucesso.");
         
     }
     
@@ -565,7 +565,9 @@ public class TesteProjeto {
             int opcao;
 
             do {
-                System.out.println("\n===== MENU RECEPCIONISTA =====");
+            	System.out.println("\n=================================");
+            	System.out.println("Recepcionista: " + recepcionista.getNome());
+            	System.out.println("=================================");
                 System.out.println("1 - Cadastrar aluno");
                 System.out.println("2 - Cadastrar professor");
                 System.out.println("3 - Cadastrar recepcionista");
@@ -615,7 +617,9 @@ public class TesteProjeto {
             int opcao;
 
             do {
-                System.out.println("\n===== MENU PROFESSOR =====");
+            	System.out.println("\n=================================");
+                System.out.println("MENU PROFESSOR - "+professor.getNome());
+                System.out.println("=================================");
                 System.out.println("1 - Listar turmas");
                 System.out.println("2 - Ver dados");
                 System.out.println("0 - Sair");
@@ -639,7 +643,9 @@ public class TesteProjeto {
             int opcao;
 
             do {
-                System.out.println("\n===== MENU ALUNO =====");
+            	System.out.println("\n=================================");
+                System.out.println("MENU ALUNO - "+aluno.getNome());
+                System.out.println("=================================");
                 System.out.println("1 - Ver dados");
                 System.out.println("2 - Ver turma");
                 System.out.println("0 - Sair");
