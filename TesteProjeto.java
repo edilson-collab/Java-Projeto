@@ -34,7 +34,8 @@ public class TesteProjeto {
             	scanner.nextLine();
             }
             catch (InputMismatchException erro) {
-                System.out.println("Digite apenas números.");
+                //digite apenas as opções anteriores
+                System.out.println("Digite apena as opções anteriores.");
                 scanner.nextLine();
                 opcao = -1;
             }
