@@ -22,6 +22,14 @@ public class Turma {
     }
 
     public void adicionarAluno(Aluno aluno) {
+    	 if (aluno.getTurma() != null) {
+
+    	        System.out.println(
+    	            "O aluno já está matriculado em uma turma."
+    	        );
+
+    	        return;
+    	    }
     	if (!alunos.contains(aluno)) {
 
             alunos.add(aluno);

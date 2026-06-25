@@ -3,84 +3,35 @@ package lpoo;
 import java.util.ArrayList;
 
 public class Login {
-	 public static Recepcionista autenticarRecepcionista(
+	 public static Pessoa autenticar(
 	            String cpf,
 	            String senha,
-	            ArrayList<Recepcionista> recepcionistas) {
+	            ArrayList<? extends Pessoa> pessoas) {
 
-	        for (Recepcionista recepcionista : recepcionistas) {
-	            if (recepcionista.getCpf().equals(cpf)
-	                    && recepcionista.getSenha().equals(senha)) {
-	                return recepcionista;
+	        for (Pessoa pessoa : pessoas) {
+
+	            if (pessoa.getCpf().equals(cpf)
+	                    && pessoa.getSenha().equals(senha)) {
+
+	                return pessoa;
 	            }
 	        }
 
 	        return null;
 	    }
 
-	    public static Professor autenticarProfessor(
+	    public static Pessoa buscarPorCpf(
 	            String cpf,
-	            String senha,
-	            ArrayList<Professor> professores) {
+	            ArrayList<? extends Pessoa> pessoas) {
 
-	        for (Professor professor : professores) {
-	            if (professor.getCpf().equals(cpf)
-	                    && professor.getSenha().equals(senha)) {
-	                return professor;
+	        for (Pessoa pessoa : pessoas) {
+
+	            if (pessoa.getCpf().equals(cpf)) {
+
+	                return pessoa;
 	            }
 	        }
 
-	        return null;
-	    }
-
-	    public static Aluno autenticarAluno(
-	            String cpf,
-	            String senha,
-	            ArrayList<Aluno> alunos) {
-
-	        for (Aluno aluno : alunos) {
-	            if (aluno.getCpf().equals(cpf)
-	                    && aluno.getSenha().equals(senha)) {
-	                return aluno;
-	            }
-	        }
-
-	        return null;
-	    }
-	    
-	    public static Recepcionista buscarRecepcionistaPorCpf(
-	            String cpf,
-	            ArrayList<Recepcionista> recepcionistas) {
-
-	        for (Recepcionista recepcionista : recepcionistas) {
-	            if (recepcionista.getCpf().equals(cpf)) {
-	                return recepcionista;
-	            }
-	        }
-	        return null;
-	    }
-	    
-	    public static Professor buscarProfessorPorCpf(
-	            String cpf,
-	            ArrayList<Professor> professores) {
-
-	        for (Professor professor : professores) {
-	            if (professor.getCpf().equals(cpf)) {
-	                return professor;
-	            }
-	        }
-	        return null;
-	    }
-	    
-	    public static Aluno buscarAlunoPorCpf(
-	            String cpf,
-	            ArrayList<Aluno> alunos) {
-
-	        for (Aluno aluno : alunos) {
-	            if (aluno.getCpf().equals(cpf)) {
-	                return aluno;
-	            }
-	        }
 	        return null;
 	    }
 }

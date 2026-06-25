@@ -1,6 +1,6 @@
 package lpoo;
 import java.util.ArrayList;
-public class Professor extends Funcionario {
+public class Professor extends Funcionario implements Matriculavel {
 	private String matricula;
 	private String graduacao;
 	private String especialidade;
@@ -11,7 +11,7 @@ public class Professor extends Funcionario {
 		int experiencia, String cpf, String dataNascimento, String email, 
 		String graduacao, String especialidade, int cargaHoraria) {
 	
-	super(nome, agencia, numeroConta, experiencia, cpf, dataNascimento, email);
+	super(nome, cpf, dataNascimento, email, agencia, numeroConta, experiencia);
 	
 	this.matricula = matricula;
 	this.graduacao = graduacao;

@@ -1,6 +1,6 @@
 package lpoo;
 
-public class Recepcionista extends Funcionario {
+public class Recepcionista extends Funcionario implements Matriculavel{
 
 	private String matricula;
 	private String turno;
@@ -8,7 +8,8 @@ public class Recepcionista extends Funcionario {
 	public Recepcionista(String matricula, String nome, String agencia, String numeroConta,
                      int experiencia, String cpf, String dataNascimento, String email, String turno) {
 
-		super(nome, agencia, numeroConta, experiencia, cpf, dataNascimento, email);
+		super(nome, cpf, dataNascimento, email,
+	      agencia, numeroConta, experiencia);
 
 		this.matricula = matricula;
 		this.turno = turno;
@@ -21,9 +22,6 @@ public class Recepcionista extends Funcionario {
 	public String getTurno() {
 		return turno;
 }
-	public String getNome() {
-		return nome;
-	}
 
 	@Override
 	public void cadastrar() {
