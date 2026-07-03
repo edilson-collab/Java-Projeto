@@ -93,13 +93,13 @@ public class TesteProjeto {
                 repositorio.getProfessores(),
                 repositorio.getRecepcionistas());
 
-        System.out.print("Nome do gestor(a): ");
+        System.out.print("Nome do(a) Recepcionista: ");
         String nome = scanner.nextLine();
 
         String cpf;
 
         do {
-            System.out.print("CPF do gestor(a): ");
+            System.out.print("CPF do(a) Recepcionista: ");
             cpf = scanner.nextLine();
 
             if (!Validador.validarCpf(cpf)) {
@@ -108,7 +108,7 @@ public class TesteProjeto {
 
         } while (!Validador.validarCpf(cpf));
 
-        System.out.print("Senha do gestor(a): ");
+        System.out.print("Senha do(a) Recepcionista: ");
         String senha = scanner.nextLine();
 
         Recepcionista administrador = new Recepcionista(
@@ -127,16 +127,9 @@ public class TesteProjeto {
         administrador.setPrimeiroAcesso(false);
 
         repositorio.getRecepcionistas().add(administrador);
-
-        System.out.println("Administrador(a) cadastrado com sucesso.");
+        System.out.println("=====-------------------------=====");
+        System.out.println("Recepcionista: "+administrador.getNome()+" cadastrado com sucesso.");
         
     }
-    
-// ================= MENUS =================
-
-    
-       
-
-        
-       
+ 
 }

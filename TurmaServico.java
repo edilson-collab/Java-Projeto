@@ -6,18 +6,12 @@ import java.util.Scanner;
 public class TurmaServico {
 	
 	  public static void criarTurma(Scanner scanner, RepositorioAcademia repositorio) {
+		  
+		  String idTurma = GeradorMatricula.gerarIdTurma(repositorio);
 
 		        try {
 
-		            System.out.print("Identificador da turma: ");
-		            int identificador = scanner.nextInt();
-		            scanner.nextLine();
-
-		            System.out.print("Nível da turma: ");
-		            String nivel = scanner.nextLine();
-
-		            System.out.print("Horário da turma: ");
-		            String horario = scanner.nextLine();
+		            String horario = EntradaDados.lerHorario(scanner);
 
 		            if (repositorio.getProfessores().isEmpty()) {
 		                System.out.println("Nenhum professor cadastrado.");
@@ -45,16 +39,13 @@ public class TurmaServico {
 		            Professor professorEscolhido =
 		                    repositorio.getProfessores().get(indiceProfessor);
 
-		            Turma turma = new Turma(
-		                    identificador,
-		                    nivel,
-		                    horario,
-		                    professorEscolhido
-		            );
+		            Turma turma = new Turma(idTurma, horario, professorEscolhido);
+		            
 
 		            repositorio.getTurmas().add(turma);
 
 		            System.out.println("Turma criada com sucesso.");
+		            System.out.println(turma);
 
 		        } catch (InputMismatchException erro) {
 		            System.out.println("Entrada inválida.");
@@ -106,7 +97,7 @@ public class TurmaServico {
 		            i + " - Turma " +
 		            turma.getIdTurma() +
 		            " (" +
-		            turma.getNivel() +
+		            turma.getModalidade().getNome() +
 		            ")"
 		        );
 		    }
@@ -133,5 +124,22 @@ public class TurmaServico {
 		    System.out.println(
 		        "Aluno matriculado com sucesso."
 		    );
+		}
+	  
+	  public static void listarTurmas(RepositorioAcademia repositorio) {
+
+		    if (repositorio.getTurmas().isEmpty()) {
+
+		        System.out.println("Nenhuma turma cadastrada.");
+		        return;
+		    }
+
+		    System.out.println("\n===== TURMAS CADASTRADAS =====");
+
+		    for (Turma turma : repositorio.getTurmas()) {
+
+		        System.out.println(turma);
+		        System.out.println("------------------------------");
+		    }
 		}
 }

@@ -3,6 +3,14 @@ package lpoo;
 public class RelatorioServico {
 	public static void exibirResumo(
 	        RepositorioAcademia repositorio) {
+		if (repositorio.getAlunos().isEmpty()
+		        && repositorio.getProfessores().isEmpty()
+		        && repositorio.getRecepcionistas().isEmpty()
+		        && repositorio.getTurmas().isEmpty()) {
+
+		    System.out.println("Nenhum relatório disponível.");
+		    return;
+		}
 
 	    System.out.println("\n===== RESUMO GERAL =====");
 

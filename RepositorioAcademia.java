@@ -7,6 +7,7 @@ public class RepositorioAcademia {
 	 private ArrayList<Professor> professores;
 	 private ArrayList<Recepcionista> recepcionistas;
 	 private ArrayList<Turma> turmas;
+	 private ArrayList<Mensalidade> mensalidades;
 
 	 public RepositorioAcademia() {
 
@@ -14,6 +15,7 @@ public class RepositorioAcademia {
 	        professores = new ArrayList<>();
 	        recepcionistas = new ArrayList<>();
 	        turmas = new ArrayList<>();
+	        mensalidades = new ArrayList<>();
 	    }
 
 	    public ArrayList<Aluno> getAlunos() {
@@ -30,5 +32,9 @@ public class RepositorioAcademia {
 
 	    public ArrayList<Turma> getTurmas() {
 	        return turmas;
+	    }
+	    
+	    public ArrayList<Mensalidade> getMensalidades() {
+	        return mensalidades;
 	    }
 }

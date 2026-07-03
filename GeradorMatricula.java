@@ -35,4 +35,8 @@ public class GeradorMatricula {
 
         return matricula;
     }
+    public static String gerarIdTurma(RepositorioAcademia repositorio) {
+        return "TR" + String.format("%03d",
+                repositorio.getTurmas().size() + 1);
+    }
 }

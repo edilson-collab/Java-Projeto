@@ -5,43 +5,29 @@ import java.util.InputMismatchException;
 
 public class CadastroUsuarios {
 
-    public static void cadastrarAluno( Scanner scanner, RepositorioAcademia repositorio) {    	 
-    	
+    public static void cadastrarAluno( Scanner scanner, RepositorioAcademia repositorio) {  
+    	 
         try {
             String matricula = GeradorMatricula.gerarMatricula("AL", repositorio.getAlunos(), repositorio.getProfessores(), repositorio.getRecepcionistas());
 
             System.out.println("Matrícula gerada: " + matricula);
 
-            System.out.print("Nome: ");
-            String nome = scanner.nextLine();
+            String nome = EntradaDados.lerNome(scanner);
 
-            System.out.print("Peso: ");
-            double peso = scanner.nextDouble();
-            scanner.nextLine();
+            double peso = EntradaDados.lerPeso(scanner);
 
-            System.out.print("Email: ");
-            String email = scanner.nextLine();
+            String email = EntradaDados.lerEmail(scanner);
 
-            System.out.print("Nascimento: ");
-            String nascimento = scanner.nextLine();
+            String nascimento = EntradaDados.lerDataNascimento(scanner);
 
-            System.out.print("Graduação: ");
-            String graduacao = scanner.nextLine();
+            String graduacao = EntradaDados.lerGraduacao(scanner);
 
-            System.out.print("CPF: ");
-            String cpf = scanner.nextLine();
-
-            if (!Validador.validarCpf(cpf)) {
-                throw new IllegalArgumentException("CPF inválido.");
-            }
-
-            if (Validador.cpfJaExiste(cpf, repositorio.getAlunos(), repositorio.getProfessores(), repositorio.getRecepcionistas())) {
-                throw new IllegalArgumentException("CPF já cadastrado.");
-            }
+            String cpf = EntradaDados.lerCpf(scanner, repositorio);
 
             repositorio.getAlunos().add(new Aluno(matricula, nome, peso, email, nascimento, graduacao, cpf));
 
             System.out.println("Aluno cadastrado com sucesso.");
+            System.out.println("Senha padrão inicial, CPF.");
 
         } catch (InputMismatchException erro) {
             System.out.println("Erro de entrada.");
@@ -60,49 +46,30 @@ public class CadastroUsuarios {
 
             System.out.println("Matrícula gerada: " + matricula);
 
-            System.out.print("Nome: ");
-            String nome = scanner.nextLine();
+            String nome = EntradaDados.lerNome(scanner);
+            
+            String agencia = EntradaDados.lerAgencia(scanner);
+            
+            String conta = EntradaDados.lerConta(scanner);
+          
+            int experiencia = EntradaDados.lerExperiencia(scanner);
 
-            System.out.print("Agência: ");
-            String agencia = scanner.nextLine();
+            String cpf = EntradaDados.lerCpf(scanner, repositorio);
+            
+            String nascimento = EntradaDados.lerDataNascimento(scanner);
 
-            System.out.print("Conta: ");
-            String conta = scanner.nextLine();
+            String email = EntradaDados.lerEmail(scanner);
 
-            System.out.print("Experiência: ");
-            int experiencia = scanner.nextInt();
-            scanner.nextLine();
+            String graduacao = EntradaDados.lerGraduacao(scanner);
+           
+            Modalidade modalidade = EntradaDados.lerModalidade(scanner);
+            
+            int cargaHoraria = EntradaDados.lerCargaHoraria(scanner);
 
-            System.out.print("CPF: ");
-            String cpf = scanner.nextLine();
-
-            if (!Validador.validarCpf(cpf)) {
-                throw new IllegalArgumentException("CPF inválido.");
-            }
-
-            if (Validador.cpfJaExiste(cpf, repositorio.getAlunos(), repositorio.getProfessores(), repositorio.getRecepcionistas())) {
-                throw new IllegalArgumentException("CPF já cadastrado.");
-            }
-
-            System.out.print("Nascimento: ");
-            String nascimento = scanner.nextLine();
-
-            System.out.print("Email: ");
-            String email = scanner.nextLine();
-
-            System.out.print("Graduação: ");
-            String graduacao = scanner.nextLine();
-
-            System.out.print("Especialidade: ");
-            String especialidade = scanner.nextLine();
-
-            System.out.print("Carga horária: ");
-            int cargaHoraria = scanner.nextInt();
-            scanner.nextLine();
-
-            repositorio.getProfessores().add(new Professor(matricula, nome, agencia, conta, experiencia, cpf, nascimento, email, graduacao, especialidade, cargaHoraria));
+            repositorio.getProfessores().add(new Professor(matricula, nome, agencia, conta, experiencia, cpf, nascimento, email, graduacao, modalidade, cargaHoraria));
 
             System.out.println("Professor cadastrado com sucesso.");
+            System.out.println("Senha padrão inicial, CPF.");
 
         } catch (InputMismatchException erro) {
             System.out.println("Erro de entrada.");
@@ -111,8 +78,9 @@ public class CadastroUsuarios {
         catch (IllegalArgumentException erro) {
             System.out.println(erro.getMessage());
         }
+        
     }
-
+   
     public static void cadastrarRecepcionista( Scanner scanner,
     		RepositorioAcademia repositorio) {
 
@@ -121,38 +89,21 @@ public class CadastroUsuarios {
 
             System.out.println("Matrícula gerada: " + matricula);
 
-            System.out.print("Nome: ");
-            String nome = scanner.nextLine();
+            String nome = EntradaDados.lerNome(scanner);
+            
+            String agencia = EntradaDados.lerAgencia(scanner);
 
-            System.out.print("Agência: ");
-            String agencia = scanner.nextLine();
+            String conta = EntradaDados.lerConta(scanner);
 
-            System.out.print("Conta: ");
-            String conta = scanner.nextLine();
+            String nascimento = EntradaDados.lerDataNascimento(scanner);
+            
+            int experiencia = EntradaDados.lerExperiencia(scanner);
 
-            System.out.print("Experiência: ");
-            int experiencia = scanner.nextInt();
-            scanner.nextLine();
+            String cpf = EntradaDados.lerCpf(scanner, repositorio);
 
-            System.out.print("CPF: ");
-            String cpf = scanner.nextLine();
+            String email = EntradaDados.lerEmail(scanner);
 
-            if (!Validador.validarCpf(cpf)) {
-                throw new IllegalArgumentException("CPF inválido.");
-            }
-
-            if (Validador.cpfJaExiste(cpf, repositorio.getAlunos(), repositorio.getProfessores(), repositorio.getRecepcionistas())) {
-                throw new IllegalArgumentException("CPF já cadastrado.");
-            }
-
-            System.out.print("Nascimento: ");
-            String nascimento = scanner.nextLine();
-
-            System.out.print("Email: ");
-            String email = scanner.nextLine();
-
-            System.out.print("Turno: ");
-            String turno = scanner.nextLine();
+            String turno = EntradaDados.lerTurno(scanner);
 
             repositorio.getRecepcionistas().add(new Recepcionista(matricula, nome, agencia, conta, experiencia, cpf, nascimento, email, turno));
 

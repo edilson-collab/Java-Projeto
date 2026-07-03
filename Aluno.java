@@ -19,7 +19,7 @@ public class Aluno extends Pessoa implements Cadastravel, Matriculavel {
         this.graduacao = graduacao;
         this.modalidades = new ArrayList<>();
     }
-
+   
     @Override
     public void cadastrar() {
         System.out.println("Aluno cadastrado.");
