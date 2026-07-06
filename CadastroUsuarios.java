@@ -23,8 +23,16 @@ public class CadastroUsuarios {
             String graduacao = EntradaDados.lerGraduacao(scanner);
 
             String cpf = EntradaDados.lerCpf(scanner, repositorio);
+            
+            Aluno aluno = new Aluno(matricula, nome, peso, email, nascimento, graduacao, cpf);
+            
+            String telefone = EntradaDados.lerTelefone(scanner);
+            aluno.getTelefones().add(telefone);
 
-            repositorio.getAlunos().add(new Aluno(matricula, nome, peso, email, nascimento, graduacao, cpf));
+            Modalidade modalidade = EntradaDados.lerModalidade(scanner);
+            aluno.adicionarModalidade(modalidade);
+            
+            repositorio.getAlunos().add(aluno);
 
             System.out.println("Aluno cadastrado com sucesso.");
             System.out.println("Senha padrão inicial, CPF.");

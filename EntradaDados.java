@@ -312,4 +312,45 @@ public class EntradaDados {
 	        }
 	    }
 	}
+	
+	public static String lerTelefone(Scanner scanner) {
+
+		 while (true) {
+
+		        System.out.print("Telefone: ");
+		        String telefone = scanner.nextLine().trim();
+
+		        telefone = telefone.replace("(", "")
+		                           .replace(")", "")
+		                           .replace("-", "")
+		                           .replace(" ", "");
+
+		        if (telefone.isEmpty()) {
+		            System.out.println("O telefone não pode ficar vazio.");
+		            continue;
+		        }
+
+		        boolean somenteNumeros = true;
+
+		        for (int i = 0; i < telefone.length(); i++) {
+
+		            if (!Character.isDigit(telefone.charAt(i))) {
+		                somenteNumeros = false;
+		                break;
+		            }
+		        }
+
+		        if (!somenteNumeros) {
+		            System.out.println("O telefone deve conter apenas números.");
+		            continue;
+		        }
+
+		        if (telefone.length() != 10 && telefone.length() != 11) {
+		            System.out.println("Telefone inválido. Digite DDD + número.");
+		            continue;
+		        }
+
+		        return telefone;
+		    }
+		}
 }

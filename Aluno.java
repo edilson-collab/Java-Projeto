@@ -2,7 +2,7 @@ package lpoo;
 
 import java.util.ArrayList;
 
-public class Aluno extends Pessoa implements Cadastravel, Matriculavel {
+public class Aluno extends Pessoa implements Matriculavel {
 
 	private String matricula;
 	private double peso;
@@ -19,18 +19,7 @@ public class Aluno extends Pessoa implements Cadastravel, Matriculavel {
         this.graduacao = graduacao;
         this.modalidades = new ArrayList<>();
     }
-   
-    @Override
-    public void cadastrar() {
-        System.out.println("Aluno cadastrado.");
-    }
-
-    @Override
-    public void excluir() {
-        System.out.println("Aluno removido.");
-    }
-
-
+  
     public void adicionarModalidade(Modalidade modalidade) {
         modalidades.add(modalidade);
     }

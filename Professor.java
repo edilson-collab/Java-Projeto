@@ -89,16 +89,6 @@ public class Professor extends Funcionario implements Matriculavel {
 	}
 
 	@Override
-	public void cadastrar() {
-	    System.out.println("Professor cadastrado.");
-	}
-
-	@Override
-	public void excluir() {
-	    System.out.println("Professor removido.");
-	}
-
-	@Override
 	public String toString() {
 		return "Professor: " + nome +
 		           "\nCPF: " + cpf +

@@ -17,11 +17,7 @@ public class TesteProjeto {
         if (repositorio.getRecepcionistas().isEmpty()) {
             configurarSistemaInicial();
         }
-        MenuSistema menuSistema =
-                new MenuSistema(
-                        scanner,
-                        repositorio
-                );
+        MenuSistema menuSistema = new MenuSistema(scanner, repositorio);
        
         int opcao;
 

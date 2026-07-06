@@ -1,6 +1,6 @@
 package lpoo;
 
-public abstract class Funcionario extends Pessoa implements Cadastravel {
+public abstract class Funcionario extends Pessoa {
 
 	protected String agencia;
 	protected String numeroConta;

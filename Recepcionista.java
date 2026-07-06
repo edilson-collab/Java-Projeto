@@ -22,17 +22,6 @@ public class Recepcionista extends Funcionario implements Matriculavel{
 	public String getTurno() {
 		return turno;
 }
-
-	@Override
-	public void cadastrar() {
-		System.out.println("Recepcionista cadastrada.");
-}
-
-	@Override
-	public void excluir() {
-		System.out.println("Recepcionista removida.");
-}
-
 	@Override
 	public String toString() {
 		return "Recepcionista: " + nome +
