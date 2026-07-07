@@ -41,24 +41,17 @@ public class Professor extends Funcionario implements Matriculavel {
 	public boolean adicionarTurma(Turma turma) {
 
 	    if (turma == null) {
-	        System.out.println("Turma inválida.");
 	        return false;
 	    }
 
 	    for (Turma turmaExistente : turmas) {
 
 	        if (turmaExistente.getHorario().equals(turma.getHorario())) {
-
-	            System.out.println(
-	                "O professor já possui uma turma nesse horário."
-	            );
-
 	            return false;
 	        }
 	    }
 
 	    turmas.add(turma);
-
 	    return true;
 	}
 	

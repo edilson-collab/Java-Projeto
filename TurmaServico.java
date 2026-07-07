@@ -51,6 +51,10 @@ public class TurmaServico {
 		            System.out.println("Entrada inválida.");
 		            scanner.nextLine();
 	        }
+		        catch (IllegalArgumentException erro) {
+
+		            System.out.println(erro.getMessage());
+		        }
 	}
 	  public static void matricularAluno(
 		        Scanner scanner,

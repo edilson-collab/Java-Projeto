@@ -1,6 +1,7 @@
 package lpoo;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class EntradaDados {
 	public static String lerGraduacao(Scanner scanner) {
@@ -282,36 +283,7 @@ public class EntradaDados {
 		        }
 		    }
 		}
-	public static int lerCargaHoraria(Scanner scanner) {
-
-	    while (true) {
-
-	        System.out.print("Carga horária: ");
-
-	        try {
-
-	            int cargaHoraria =
-	                    Integer.parseInt(scanner.nextLine());
-
-	            if (cargaHoraria <= 0) {
-	                System.out.println("A carga horária deve ser maior que zero.");
-	                continue;
-	            }
-
-	            if (cargaHoraria > 80) {
-	                System.out.println("Carga horária inválida max menor ou igual a 80.");
-	                continue;
-	            }
-
-	            return cargaHoraria;
-
-	        } catch (NumberFormatException e) {
-
-	            System.out.println("Digite apenas números inteiros.");
-
-	        }
-	    }
-	}
+	
 	
 	public static String lerTelefone(Scanner scanner) {
 
@@ -353,4 +325,38 @@ public class EntradaDados {
 		        return telefone;
 		    }
 		}
+	
+	public static int lerCargaHoraria(Scanner scanner) {
+
+	    while (true) {
+	        try {
+	            System.out.println("\n===== CARGA HORÁRIA =====");
+	            System.out.println("1 - 2 horas");
+	            System.out.println("2 - 4 horas");
+	            System.out.println("3 - 6 horas");
+	            System.out.println("4 - 8 horas");
+	            System.out.print("Escolha uma opção: ");
+
+	            int opcao = scanner.nextInt();
+	            scanner.nextLine();
+
+	            switch (opcao) {
+	                case 1:
+	                    return 2;
+	                case 2:
+	                    return 4;
+	                case 3:
+	                    return 6;
+	                case 4:
+	                    return 8;
+	                default:
+	                    System.out.println("Opção inválida!");
+	            }
+
+	        } catch (InputMismatchException e) {
+	            System.out.println("Digite apenas números.");
+	            scanner.nextLine();
+	        }
+	    }
+	}
 }
