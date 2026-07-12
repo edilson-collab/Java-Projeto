@@ -76,9 +76,6 @@ public class TesteProjeto {
         } while (opcao != 0);
     }
 
-   
-    // ================= CONFIGURAÇÃO INICIAL =================
-
     public static void configurarSistemaInicial() {
 
         System.out.println("===== PRIMEIRO ACESSO =====");

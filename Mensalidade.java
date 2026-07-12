@@ -100,16 +100,6 @@ public class Mensalidade {
 
         this.status = PAGA;
     }
-    public String gerarRecibo() {
-
-        return "========== RECIBO ==========\n"
-             + "Aluno: " + aluno.getNome()
-             + "\nPlano: " + plano
-             + "\nValor: R$ " + String.format("%.2f", valor)
-             + "\nPagamento: " + dataPagamento
-             + "\nStatus: " + status
-             + "\n============================";
-    }
 
     @Override
     public String toString() {

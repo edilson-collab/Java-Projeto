@@ -98,10 +98,6 @@ public class LoginServico {
         return aluno;
     }
 
-    
-   
-    // ================= TROCA DE SENHA =================
-
     public static void trocarSenhaAluno(Scanner scanner, Aluno aluno) {
     	String novaSenha;
 
